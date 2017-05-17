@@ -41,8 +41,6 @@ hr.star-primary {
 }
 hr.star-light:after,
 hr.star-primary:after {
-  content: "\f005";
-  font-family: FontAwesome;
   display: inline-block;
   position: relative;
   top: -0.8em;
@@ -181,7 +179,7 @@ section h2 {
   font-size: 3em;
 }
 section.success {
-  background: #582A72;
+  background: #2E4372;
   color: white;
 }
 @media (max-width: 767px) {
@@ -192,15 +190,17 @@ section.success {
     padding-top: 75px;
   }
 }
+
+
 section#portfolio {
-  background: #2E4372;
+  background: #582A72;
   color: white;
 }
 #portfolio .portfolio-item {
   margin: 0 0 15px;
   right: 0;
-
 }
+
 #portfolio .portfolio-item .portfolio-link {
   display: block;
   position: relative;
@@ -521,6 +521,21 @@ div#maincontent {
 }
 
 section#contact {
+  background: #582A72;
+  color: white;
+}
+
+section#skills {
   background: #2E4372;
   color: white;
+}
+
+#skills .skills-item {
+    margin: 0 0 15px;
+    right: 0;
+}
+@media (min-width: 767px) {
+    #skills .skills-item {
+        margin: 0 0 30px;
+    }
 }
