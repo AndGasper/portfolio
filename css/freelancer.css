@@ -66,7 +66,7 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background: #582A72;
+  background: #673ab7;
   color: white;
 }
 header .container {
@@ -101,7 +101,7 @@ header .intro-text .skills {
   }
 }
 .navbar-custom {
-  background: #413075;
+  background: #512da8;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -179,7 +179,7 @@ section h2 {
   font-size: 3em;
 }
 section.success {
-  background: #2E4372;
+  background: #2856b6;
   color: white;
 }
 @media (max-width: 767px) {
@@ -193,7 +193,7 @@ section.success {
 
 
 section#portfolio {
-  background: #582A72;
+  background: #673ab7;
   color: white;
 }
 #portfolio .portfolio-item {
@@ -228,7 +228,7 @@ section#portfolio {
   text-align: center;
   top: 50%;
   margin-top: -12px;
-  color: #2E4372;
+  color: #2856b6;
 }
 #portfolio .portfolio-item .portfolio-link .caption .caption-content i {
   margin-top: -12px;
@@ -263,7 +263,7 @@ section#portfolio {
   background: none;
   box-shadow: none !important;
   resize: none;
-    color: #039BE5;
+    color: white;
 }
 .floating-label-form-group label {
   display: block;
@@ -528,21 +528,31 @@ div#maincontent {
 }
 
 section#contact {
-  background: #582A72;
+  background: #673ab7;
   color: white;
 }
 
 section#skills {
-  background: #2E4372;
+  background: #2856b6;
   color: white;
 }
 
 #skills .skills-item {
     margin: 0 0 15px;
     right: 0;
+    text-align: center;
+
 }
 @media (min-width: 767px) {
     #skills .skills-item {
         margin: 0 0 30px;
+        text-align: center;
+
+
     }
 }
+.skillsAll {
+
+}
+
+
