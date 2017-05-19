@@ -543,6 +543,10 @@ section#skills {
     text-align: center;
 
 }
+.skills-item > p {
+    font-size: 1.35em;
+    text-align: center;
+}
 @media (min-width: 767px) {
     #skills .skills-item {
         margin: 0 0 30px;
