@@ -542,7 +542,6 @@ section#skills {
     margin: 0 0 15px;
     right: 0;
     text-align: center;
-
 }
 .skills-item > p {
     font-size: 1.35em;
@@ -554,6 +553,11 @@ section#skills {
         text-align: center;
 
     }
+}
+
+.skills-item > svg {
+  width: 70%;
+  height: 70%;
 }
 
 
