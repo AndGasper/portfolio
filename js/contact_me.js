@@ -20,6 +20,13 @@ $(function() {
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
+            $("#btnSubmit").attr("disabled", false);
+            $('#success').html("<div class='alert alert-warning' role='alert'>");
+            $('#success > .alert-success')
+                .append("<strong>Your message is sending.</strong>");
+            $('#success > .alert-success')
+                .append('</div>');
+
             $.ajax({
                 url: "././mail/contact_me.php",
                 type: "POST",
