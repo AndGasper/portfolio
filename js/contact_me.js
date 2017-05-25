@@ -21,10 +21,10 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $("#btnSubmit").attr("disabled", false);
-            $('#success').html("<div class='alert alert-warning' role='alert'>");
-            $('#success > .alert-success')
+            $('#success').html("<div class='alert alert-warning'>");
+            $('#success > .alert-warning')
                 .append("<strong>Your message is sending.</strong>");
-            $('#success > .alert-success')
+            $('#success > .alert-warning')
                 .append('</div>');
 
             $.ajax({
