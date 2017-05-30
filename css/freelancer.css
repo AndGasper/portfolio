@@ -8,10 +8,10 @@ body {
   overflow-x: hidden;
 }
 p {
-  font-size: 20px;
+  font-size: 1.25em;
 }
 p.small {
-  font-size: 16px;
+  font-size: 1em;
 }
 a,
 a:hover,
@@ -41,8 +41,6 @@ hr.star-primary {
 }
 hr.star-light:after,
 hr.star-primary:after {
-  content: "\f005";
-  font-family: FontAwesome;
   display: inline-block;
   position: relative;
   top: -0.8em;
@@ -68,7 +66,7 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background: #582A72;
+  background: #673ab7;
   color: white;
 }
 header .container {
@@ -103,7 +101,7 @@ header .intro-text .skills {
   }
 }
 .navbar-custom {
-  background: #413075;
+  background: #512da8;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -111,6 +109,7 @@ header .intro-text .skills {
 }
 .navbar-custom .navbar-brand {
   color: white;
+    font-size: 1.75em;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
@@ -144,7 +143,7 @@ header .intro-text .skills {
 .navbar-custom .navbar-toggle {
   color: white;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 0.80em;
   border-color: white;
 }
 .navbar-custom .navbar-toggle:hover,
@@ -181,7 +180,7 @@ section h2 {
   font-size: 3em;
 }
 section.success {
-  background: #582A72;
+  background: #2856b6;
   color: white;
 }
 @media (max-width: 767px) {
@@ -192,15 +191,17 @@ section.success {
     padding-top: 75px;
   }
 }
+
+
 section#portfolio {
-  background: #2E4372;
+  background: #673ab7;
   color: white;
 }
 #portfolio .portfolio-item {
-  margin: 0 0 15px;
-  right: 0;
-
+    margin: 0 0 15px;
+    right: 0;
 }
+
 #portfolio .portfolio-item .portfolio-link {
   display: block;
   position: relative;
@@ -224,11 +225,11 @@ section#portfolio {
   position: absolute;
   width: 100%;
   height: 20px;
-  font-size: 20px;
+  font-size: 1.25em;
   text-align: center;
   top: 50%;
   margin-top: -12px;
-  color: #2E4372;
+  color: #2856b6;
 }
 #portfolio .portfolio-item .portfolio-link .caption .caption-content i {
   margin-top: -12px;
@@ -263,6 +264,7 @@ section#portfolio {
   background: none;
   box-shadow: none !important;
   resize: none;
+    color: white;
 }
 .floating-label-form-group label {
   display: block;
@@ -279,7 +281,13 @@ section#portfolio {
   -moz-transition: top 0.3s ease,opacity 0.3s ease;
   -ms-transition: top 0.3s ease,opacity 0.3s ease;
   transition: top 0.3s ease,opacity 0.3s ease;
+
 }
+
+p.help-block.text-danger {
+    color: #F44336;
+}
+
 .floating-label-form-group:not(:first-child) {
   padding-left: 14px;
   border-left: 1px solid #eeeeee;
@@ -313,7 +321,7 @@ footer .footer-below {
 }
 .btn-outline {
   color: white;
-  font-size: 20px;
+  font-size: 1.25em;
   border: solid 2px white;
   background: transparent;
   transition: all 0.3s ease-in-out;
@@ -418,7 +426,7 @@ fieldset[disabled] .btn-success.active {
   border: 2px solid white;
   border-radius: 100%;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 45px;
 }
 .scroll-top {
@@ -430,7 +438,7 @@ fieldset[disabled] .btn-success.active {
   z-index: 1049;
 }
 .scroll-top .btn {
-  font-size: 20px;
+  font-size: 1.25em;
   width: 50px;
   height: 50px;
   border-radius: 100%;
@@ -521,6 +529,38 @@ div#maincontent {
 }
 
 section#contact {
-  background: #2E4372;
+  background: #673ab7;
   color: white;
 }
+
+section#skills {
+  background: #2856b6;
+  color: white;
+}
+
+#skills .skills-item {
+    margin: 0 0 15px;
+    right: 0;
+    text-align: center;
+}
+.skills-item > p {
+    font-size: 1.35em;
+    text-align: center;
+}
+@media (min-width: 767px) {
+    #skills .skills-item {
+        margin: 0 0 30px;
+        text-align: center;
+
+    }
+}
+
+.skills-item > svg {
+  width: 70%;
+  height: 70%;
+}
+
+
+
+
+

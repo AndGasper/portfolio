@@ -1,1 +1,3 @@
 node_modules
+/PHPMailer/
+/mail/email_config.php
