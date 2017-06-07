@@ -439,12 +439,9 @@
           );
           $this.bind(
             [
-              "keyup",
               "focus",
               "blur",
               "click",
-              "keydown",
-              "keypress",
               "change"
             ].join(".validation ") + ".validation",
             function (e, params) {

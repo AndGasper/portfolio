@@ -1,5 +1,6 @@
 <?php
-$errorMessageEmpty = json_encode(array('message' => 'No arguments provided'));
+$errorMessageEmpty = json_encode(array('message' => 'No content provided'));
+
 // Check for empty fields
 if(empty($_POST['name']) ||
     empty($_POST['email']) ||
@@ -10,6 +11,19 @@ if(empty($_POST['name']) ||
     echo $errorMessageEmpty;
     return false;
 }
+
+$characterPattern = "/[a-zA-Z]/";
+// Check to see if the input contains at least one letter
+preg_match($characterPattern, $_POST['name'], $nameMatch);
+preg_match($characterPattern, $_POST['email'], $emailMatch);
+preg_match($characterPattern, $_POST['subject'], $subjectMatch);
+preg_match($characterPattern, $_POST['message'], $messageMatch);
+// If the fields do not contain any alphabetical character, they were probably sending a blank message
+if ( empty($nameMatch) || empty($emailMatch) || empty($subjectMatch) || empty($messageMatch)) {
+    echo $errorMessageEmpty;
+    return false;
+}
+
 require_once('email_config.php');
 require('../PHPMailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
