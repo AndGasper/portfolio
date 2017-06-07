@@ -1,5 +1,6 @@
 <?php
-$errorMessageEmpty = json_encode(array('message' => 'No content provided'));
+$errorMessageEmpty = json_encode(array('empty' => 'No content provided'));
+
 
 // Check for empty fields
 if(empty($_POST['name']) ||
@@ -20,7 +21,7 @@ preg_match($characterPattern, $_POST['subject'], $subjectMatch);
 preg_match($characterPattern, $_POST['message'], $messageMatch);
 // If the fields do not contain any alphabetical character, they were probably sending a blank message
 if ( empty($nameMatch) || empty($emailMatch) || empty($subjectMatch) || empty($messageMatch)) {
-    echo $errorMessageEmpty;
+    echo json_encode(array('empty' => true));
     return false;
 }
 
