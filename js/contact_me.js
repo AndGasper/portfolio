@@ -1,3 +1,4 @@
+// File contains the ajax call for the contact_me
 $(function() {
 
     $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
@@ -78,3 +79,4 @@ $(function() {
 $('#name').focus(function() {
     $('#success').html('');
 });
+

@@ -32,17 +32,13 @@ $options = array(
     )
 );
 $mail->smtpConnect($options);
-$mail->From = $_POST['email']; // who sent it. gmail will rewrite who sent it to show "me" as the sender, so I add in the replyTo address so I know who sent it
+$mail->From = strip_tags(htmlspecialchars($_POST['email'])); // who sent it. gmail will rewrite who sent it to show "me" as the sender, so I add in the replyTo address so I know who sent it
 $mail->FromName = strip_tags(htmlspecialchars($_POST['name']));//your email sending account name
 $mail->addAddress(EMAIL_USER, 'andgasperdev.com'); // Send the mail to account
-//$mail->addAddress('ellen@example.com');               // Name is optional
-$mail->addReplyTo($_POST['email']); // Add the sender's email address in the reply to setting
-//$mail->addCC('cc@example.com');
-//$mail->addBCC('bcc@example.com');
 
-//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-$mail->isHTML(true);                                  // Set email format to HTML
+$mail->addReplyTo(strip_tags(htmlspecialchars($_POST['email']))); // Add the sender's email address in the reply to setting
+
+$mail->isHTML(false); // Set email format to HTML
 
 // Pull mail information from the POST super global using the names of the input fields
 $mail->Subject = strip_tags(htmlspecialchars($_POST['subject']));
