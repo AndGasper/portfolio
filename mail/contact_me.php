@@ -1,5 +1,7 @@
 <?php
-$errorMessageEmpty = json_encode(array('message' => 'No arguments provided'));
+$errorMessageEmpty = json_encode(array('empty' => 'No content provided'));
+
+
 // Check for empty fields
 if(empty($_POST['name']) ||
     empty($_POST['email']) ||
@@ -10,6 +12,19 @@ if(empty($_POST['name']) ||
     echo $errorMessageEmpty;
     return false;
 }
+
+$characterPattern = "/[a-zA-Z]/";
+// Check to see if the input contains at least one letter
+preg_match($characterPattern, $_POST['name'], $nameMatch);
+preg_match($characterPattern, $_POST['email'], $emailMatch);
+preg_match($characterPattern, $_POST['subject'], $subjectMatch);
+preg_match($characterPattern, $_POST['message'], $messageMatch);
+// If the fields do not contain any alphabetical character, they were probably sending a blank message
+if ( empty($nameMatch) || empty($emailMatch) || empty($subjectMatch) || empty($messageMatch)) {
+    echo json_encode(array('empty' => true));
+    return false;
+}
+
 require_once('email_config.php');
 require('../PHPMailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
@@ -32,17 +47,13 @@ $options = array(
     )
 );
 $mail->smtpConnect($options);
-$mail->From = $_POST['email']; // who sent it. gmail will rewrite who sent it to show "me" as the sender, so I add in the replyTo address so I know who sent it
+$mail->From = strip_tags(htmlspecialchars($_POST['email'])); // who sent it. gmail will rewrite who sent it to show "me" as the sender, so I add in the replyTo address so I know who sent it
 $mail->FromName = strip_tags(htmlspecialchars($_POST['name']));//your email sending account name
 $mail->addAddress(EMAIL_USER, 'andgasperdev.com'); // Send the mail to account
-//$mail->addAddress('ellen@example.com');               // Name is optional
-$mail->addReplyTo($_POST['email']); // Add the sender's email address in the reply to setting
-//$mail->addCC('cc@example.com');
-//$mail->addBCC('bcc@example.com');
 
-//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-$mail->isHTML(true);                                  // Set email format to HTML
+$mail->addReplyTo(strip_tags(htmlspecialchars($_POST['email']))); // Add the sender's email address in the reply to setting
+
+$mail->isHTML(false); // Set email format to HTML
 
 // Pull mail information from the POST super global using the names of the input fields
 $mail->Subject = strip_tags(htmlspecialchars($_POST['subject']));
